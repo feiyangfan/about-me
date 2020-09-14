@@ -6,23 +6,21 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./about-me.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
     <title>About Me</title>
   </head>
-
-  <body>
-    <div class="main">
-      <div class="navbar-container">
-        <nav>
-          <h1 id="logo-text">Hello, there!</h1>
-          <ul>
-            <li><a href="https://github.com/feiyangfan">Github</a></li>
-          </ul>
-        </nav>
-      </div>
+<body class="d-flex flex-column min-vh-100">
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand pl-5 ">Hello!</a>
+    <a class=".navbar-text text-light pr-5 text-decoration-none" href="https://github.com/feiyangfan">Github</a>
+  </nav>
+    <main role="main" class="flex-shrik-0">
+    <div class="container pt-3">
+      
       <div class="info-div">
-        <h2>About me</h2>
-        <section class="info">
+        <h2 class="">About me</h2>
+        <section class="info container">
           <p>
             My name is Feiyang Fan. I am an third-year undergraduate student
             specialized in computer science at
@@ -36,15 +34,16 @@
             have many simple but useful features! Anyways, have a nice day!
           </p>
         </section>
-        <h2>Projects</h2>
-        <section class="projects-section">
+        <h2 class="">Projects</h2>
+        <section class="projects-section container">
           <div class="projects">
             <div class="project">
-              <h3>
-                <a href="https://github.com/feiyangfan/my-website"
-                  >My website</a
-                >
-              </h3>
+              <div class="project-title d-flex align-items-center"><h3 class="">
+                <span class="pr-5 "
+                  >My website</span
+                > 
+              </h3><a href="https://github.com/feiyangfan/my-website" class="">Github Link</a><a href="" class="pl-4">Deployed Website</a></div>
+              
               <ul>
                 <li></li>
                 <li></li>
@@ -52,27 +51,46 @@
                 <li></li>
               </ul>
             </div>
-          </div>
-          <div class="projects">
             <div class="project">
-              <h3><a href="">Collection of Android games</a></h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+              <div class="project-title d-flex align-items-center"><h3 class="">
+                <span class="pr-5 "
+                  >Simple URL shortener</span
+                > 
+              </h3><a href="https://github.com/feiyangfan/my-website" class="https://github.com/feiyangfan/my-simple-url-shortener">Github Link</a><a href="https://ffy-url-shortener.herokuapp.com/" class="pl-4">Deployed Website</a></div>
+              
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
             </div>
-          </div>
-          <div class="projects">
             <div class="project">
-              <h3><a href="">URL-Shortner</a></h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+              <div class="project-title d-flex align-items-center"><h3 class="">
+                <span class="pr-5 "
+                  >Collection of android games</span
+                > 
+              </h3><a href="https://github.com/feiyangfan/simple-android-game" class="">Github Link</a></div>
+              
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
             </div>
+
           </div>
-          <div class="projects">
-            <div class="project">
-              <h3><a href="">Ios App</a></h3>
-              <p>Ongoing project, learning objective-c and swift</p>
-            </div>
-          </div>
+          
         </section>
       </div>
     </div>
-  </body>
+  </main>
+  <footer class="mt-auto card-footer text-center text-muted">This is an about me website built by <a href="https://github.com/feiyangfan">fanfeiya</a></footer>
+</body>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+  <script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+  
 </html>
