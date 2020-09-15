@@ -6,6 +6,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <title>About Me</title>
@@ -13,36 +14,36 @@
 <body class="d-flex flex-column min-vh-100">
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand pl-5 ">Hello!</a>
-    <a class=".navbar-text text-light pr-5 text-decoration-none" href="https://github.com/feiyangfan">Github</a>
+    <a class=".navbar-text text-light pr-5 text-decoration-none " href="https://github.com/feiyangfan">Github</a>
   </nav>
     <main role="main" class="flex-shrik-0">
     <div class="container pt-3">
       
-      <div class="info-div">
-        <h2 class="">About me</h2>
+      <div class="info-div ">
+        <h2 class="border-bottom pb-2 l-text">About me</h2>
         <section class="info container">
-          <p>
+          <p class="text-dark">
             My name is Feiyang Fan. I am an third-year undergraduate student
             specialized in computer science at
-            <a href="https://www.utoronto.ca/"
+            <u><a href="https://www.utoronto.ca/"
               >University of Toronto, St. George</a
-            >
+            ></u>
             . I am mostly interested in web development, desktop development,
             and mobile development. This is a small website I made about me.
             Currently, I am working on a
-            <a href="https://github.com/feiyangfan/my-website">website</a> that
+            <u><a href="https://github.com/feiyangfan/my-website">website</a></u> that
             have many simple but useful features! Anyways, have a nice day!
           </p>
         </section>
-        <h2 class="">Projects</h2>
+        <h2 class="border-bottom pb-2 l-text">Projects</h2>
         <section class="projects-section container">
           <div class="projects">
             <div class="project">
-              <div class="project-title d-flex align-items-center"><h3 class="">
-                <span class="pr-5 "
+              <div class="project-title d-flex align-items-center"><h4 class="">
+                <span class="pr-4 m-text"
                   >My website</span
                 > 
-              </h3><a href="https://github.com/feiyangfan/my-website" class="">Github Link</a><a href="" class="pl-4">Deployed Website</a></div>
+              </h4><u><a href="https://github.com/feiyangfan/my-website" class="git">[Github repo]</a></u><u><a href="" class="pl-4 git">[Website]</a></u></div>
               
               <ul>
                 <li></li>
@@ -52,39 +53,81 @@
               </ul>
             </div>
             <div class="project">
-              <div class="project-title d-flex align-items-center"><h3 class="">
-                <span class="pr-5 "
+              <div class="project-title d-flex align-items-center"><h4 class="">
+                <span class="pr-4 m-text"
                   >Simple URL shortener</span
                 > 
-              </h3><a href="https://github.com/feiyangfan/my-website" class="https://github.com/feiyangfan/my-simple-url-shortener">Github Link</a><a href="https://ffy-url-shortener.herokuapp.com/" class="pl-4">Deployed Website</a></div>
+              </h4><u><a href="https://github.com/feiyangfan/my-simple-url-shortener" class="git">[Github repo]</a></u> <u><a href="https://ffy-url-shortener.herokuapp.com/" class="git pl-4">[Website]</a></u></div>
+              <div class="container"><p>A URL shortener built with express, stores data in mongoDB database service, beautified with bootstrap, and deployed on heroku.</p>
+                <ul class=>
+                  <li>Validate user's input to make sure it is a proper URL</li>
+                  <li>List of previously shortened URLs</li>
+                  <li>Store data in database for a specific period of time with TTL(time to live).</li>
+                </ul>
+              </div>
               
-              <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
             </div>
             <div class="project">
-              <div class="project-title d-flex align-items-center"><h3 class="">
-                <span class="pr-5 "
+              <div class="project-title d-flex align-items-center"><h4 class="">
+                <span class="pr-4 m-text"
                   >Collection of android games</span
                 > 
-              </h3><a href="https://github.com/feiyangfan/simple-android-game" class="">Github Link</a></div>
+              </h4><a href="https://github.com/feiyangfan/simple-android-game" class="git">[Github repo]</a></div>
+              <div class="container"><p>A collection of android game made by 6 people, created with Java and followed OO programming guideline</p>
               
               <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>3 mini games</li>
+                <li>Score system that record scores as the player keep playing, and remember the highest score for every user</li>
+                <li>User login system that allows players to register and login</li>
               </ul>
             </div>
-
           </div>
-          
         </section>
+
+        
+
       </div>
+      
     </div>
+    <div class="container"><h2 class=" border-bottom pb-2 l-text">Courses</h2>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            
+            <th scope="col">Finished course</th>
+            
+            <th scope="col">Currently taking</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td >CSC207</td>
+            
+            <td>CSC301</td>
+            
+          </tr>
+          <tr>
+            <td scope="row">CSC209</td>
+            
+            <td>CSC311</td>
+            
+          </tr>
+          <tr>
+            <td scope="row">3</td>
+            
+            <td>the Bird</td>
+            
+          </tr>
+          <tr><td>1</td><td>1</td></tr>
+          <tr><td>1</td><td>1</td></tr>
+        </tbody>
+      </table></div>
+
+
+
+
+
+    
   </main>
   <footer class="mt-auto card-footer text-center text-muted">This is an about me website built by <a href="https://github.com/feiyangfan">fanfeiya</a></footer>
 </body>

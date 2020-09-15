@@ -1,0 +1,17 @@
+p {
+    font-size: 1.2rem;
+}
+
+
+
+@media all and (max-width: 500px) { /* screen size until 500px */
+    p {font-size:1rem;}
+    
+    .git{font-size: 0.7rem;}
+    .l-text {font-size: 1.3rem;}
+    .m-text {font-size: 1.1rem;}
+    .table {font-size: 1rem;}
+    }
+
+    
+
