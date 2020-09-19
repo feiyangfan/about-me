@@ -1,4 +1,4 @@
-#### Simple about-me page
+#### My personal website
 
-This is a simple about-me page build with html/css and bootstrap since it is a very simple static page.  
-Hosted on: https://feiyangfan.github.io/about-me/
+This is a simple personal website build with html, css, and bootstrap.  
+Hosted on: https://feiyangfan.github.io/my-personal-website/
