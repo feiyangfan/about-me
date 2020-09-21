@@ -8,8 +8,12 @@ add/delete new information in a modular way. I was inspired to build this app wh
 * Allow users to add/delete projects
 * Easy to navigate and manage
 
-## How to use
-My website is hosted on heroku, [Link](https://ffy-modular-website-interface.herokuapp.com/)
+## Future updates
+* Add user authentification system that allows only me to access the interface tool
+* Add other modifiable information block such as about-me, courses table, etc..
 
-**Demo**
+## How to use
+My website is hosted on heroku, [Link](https://ffy-personal-modular-website.herokuapp.com/)
+
+**Add/delete projects Demo**
 <img src="./readme-assets/demo.gif" alt="demo">
