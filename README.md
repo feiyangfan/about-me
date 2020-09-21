@@ -13,7 +13,7 @@ add/delete new information in a modular way. I was inspired to build this app wh
 * Add other modifiable information block such as about-me, courses table, etc..
 
 ## How to use
-My website is hosted on heroku, [Link](https://ffy-personal-modular-website.herokuapp.com/)
+My website is hosted on heroku, [Link](https://ffy-modular-personal-website.herokuapp.com/)
 
 **Add/delete projects Demo**
 <img src="./readme-assets/demo.gif" alt="demo">
