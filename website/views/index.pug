@@ -1,0 +1,57 @@
+extends layout
+
+block layout-content
+  nav(class="navbar navbar-expand-lg navbar-light bg-light sticky-top")
+      button(
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      )
+        span(class="navbar-toggler-icon")
+      a(class="navbar-brand pl-5" href="/") My Personal Website
+      div(class="collapse navbar-collapse" id="navbarTogglerDemo03")
+        ul(class="navbar-nav mr-auto mt-2 mt-lg-0")
+          li(class="nav-item")
+            a(
+              class="nav-link disabled"
+              href="#"
+              tabindex="-1"
+              aria-disabled="true"
+            )
+        a(
+          class="navbar-text pr-5 text-decoration-none"
+          href="https://github.com/feiyangfan"
+          ) Github
+  div(class='main-display h-100 container p-4')
+    div(class="info-div container")
+      h2(class="border-bottom pb-2 l-text") About me
+      section(class="info container")
+        p( class="text-dark") 
+          | My name is Feiyang Fan. I am an third-year computer science specialist studying at 
+          u
+            a(href="https://www.utoronto.ca/") University of Toronto.
+          |  I am interested in web development, desktop development, mobile development, data processing, and machine learning. This is a small website I made about me. Currently, I am working on a 
+          u
+            a(href="https://github.com/feiyangfan/my-daily-planner"
+              ) web daily planner app
+          |  that have many simple but useful features! Anyways, have a nice day!
+    div(class="projects-sec container")
+      h2(class="border-bottom pb-2 l-text") Projects
+      div(class="container")
+        each project in projects
+          div(class="project")
+            div(class="project-title d-flex align-items-center")
+              h4
+                span(class="pr-4 m-text")=project.name
+          div(class="container")
+            p=project.desc
+            ul(class="mt-n3")
+              each detail in project.details
+                if detail
+                  li=detail
+        else
+          div There are no projects, please use interface to add projects.
