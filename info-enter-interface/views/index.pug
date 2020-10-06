@@ -2,13 +2,13 @@ extends layout
 
 block layout-content
   div(class='main-display h-100 container p-4')
-    h2(class='p-2')
+    h2(class='pb-2 pt-2')
       | Interface for 
-      a(href="123") my modular personal website
+      a(href="https://ffy-modular-personal-website.herokuapp.com/") my modular personal website
 
 
     div(class='form-div')
-      h3 About me
+      h3 About-me Section
       if(about.length != 0) 
         - var con = about[0].content
         button(class="btn btn-outline-danger mb-3" type="button" data-toggle="collapse" data-target="#about-field" aria-expanded="false" aria-controls="about-field" onclick="") Click to edit about-me
@@ -27,7 +27,7 @@ block layout-content
           else
             button(type="submit" class="btn btn-outline-success") Add
 
-      h3 Project
+      h3 Project Section
       button(class="btn btn-outline-primary mb-3" type="button" data-toggle="collapse" data-target="#project-field" aria-expanded="false" aria-controls="project-field") Click to add project
       div(class="collapse" id="project-field")
         form(class="was-validated" action="/sendPData" method="POST")
@@ -78,22 +78,17 @@ block layout-content
           br
           button(type="submit" class="btn btn-outline-success") Add
 
-      
-
-
-
     table(class="table mt-3")
       thead(class="thead-light")
         tr 
           th About-me content
           th 
-        tbody
-          each ab in about
-            td=ab.content
-            td
-              form(action="/deleteAbout" method="POST" class="d-inline")
-                button(class="btn btn-outline-danger btn-sm" name="id" value=about._id) Delete
-              
+      tbody
+        each ab in about
+          td=ab.content
+          td
+            form(action="/deleteAbout" method="POST" class="d-inline")
+              button(class="btn btn-outline-danger btn-sm" name="id" value=about._id) Delete
 
     table(class="table mt-3")
       thead(class="thead-light")
@@ -101,8 +96,9 @@ block layout-content
           th Current Project
           th Project Description
           th 
-        tbody
-          each project in projects
+      tbody
+        each project in projects
+          tr
             td=project.name
             td=project.desc
             td

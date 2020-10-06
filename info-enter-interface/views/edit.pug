@@ -2,8 +2,8 @@ extends layout
 
 block layout-content
   div(class='main-display h-100 container p-4')
-    h2(class='p-2')
-      | Interface for 
+    h2(class='pb-2 pt-2')
+      | Interface for
       a(href="123") my modular personal website
 
 
@@ -11,10 +11,10 @@ block layout-content
 
       - var pname = project.name
       - var pdesc = project.desc
-      - var pdetail1 = project.details[0]
       - var id = project._id
-      - var display = "Currently editing project: " + project.name
-      h3=display
+      - var details = project.details
+      - var glink = project.githubLink
+      h3(class="") Currently editing project: <span class="text-info">#{pname}</span>
       div(class="" id="")
         form(class="was-validated" action="/doneEditProject" method="POST" new="11233")
           div(class="form-group")
@@ -30,34 +30,34 @@ block layout-content
           div(class="form-group")
             label(for="validationTextarea3") Project Details
             //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-            textarea(name="pdetail" class="form-control " id="validationTextarea3" placeholder="Required project detail textarea" required maxlength="140")=pdetail1
+            textarea(name="pdetail" class="form-control " id="validationTextarea3" placeholder="Required project detail textarea" required maxlength="140")=details[0]
             div(class="invalid-feedback") Please enter Project details in the textarea.
 
           div(class="" id="")
             div(class="form-group")
               label(for="validationTextarea4") Github Links
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-              textarea(name="githubLink" class="form-control is-valid" id="validationTextarea4" placeholder="project detail textarea" maxlength="140")
+              textarea(name="githubLink" class="form-control " id="validationTextarea4" placeholder="project detail textarea" maxlength="140")=glink
               div(class="valid-feedback") (Optional)Please enter Project Github links in the textarea.
             div(class="form-group")
               label(for="validationTextarea4") Project Details
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-              textarea(name="detail" class="form-control is-valid" id="validationTextarea4" placeholder="project detail textarea" maxlength="140")
+              textarea(name="detail" class="form-control " id="validationTextarea4" placeholder="project detail textarea" maxlength="140")=details[1]
               div(class="valid-feedback") (Optional)Please enter Project details in the textarea.
             div(class="form-group")
               label(for="validationTextarea5") Project Details
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-              textarea(name="detail" class="form-control is-valid" id="validationTextarea5" placeholder="project detail textarea" maxlength="140")
+              textarea(name="detail" class="form-control " id="validationTextarea5" placeholder="project detail textarea" maxlength="140")=details[2]
               div(class="valid-feedback") (Optional)Please enter Project details in the textarea.
             div(class="form-group")
               label(for="validationTextarea6") Project Details
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-              textarea(name="detail" class="form-control is-invalid" id="validationTextarea6" placeholder="project detail textarea" maxlength="140")
+              textarea(name="detail" class="form-control " id="validationTextarea6" placeholder="project detail textarea" maxlength="140")=details[3]
               div(class="valid-feedback") (Optional)Please enter Project details in the textarea.
             div(class="form-group")
               label(for="validationTextarea7") Project Details
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-              textarea(name="detail" class="form-control is-valid" id="validationTextarea7" placeholder="project detail textarea" maxlength="140")
+              textarea(name="detail" class="form-control " id="validationTextarea7" placeholder="project detail textarea" maxlength="140")=details[4]
               div(class="valid-feedback") (Optional)Please enter Project details in the textarea.
             div(class="form-group invisible")
               textarea(name="id" class="form-control")=id

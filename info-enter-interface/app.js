@@ -53,7 +53,7 @@ app.post("/sendPData", async (req, res) => {
 });
 
 app.post("/deleteProject", async (req, res) => {
-  // await console.log(req.body);
+  await console.log(req.body);
   await Project.deleteOne({ _id: req.body.id });
   res.redirect("/");
 });
