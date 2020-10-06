@@ -8,29 +8,11 @@ block layout-content
 
 
     div(class='form-div')
-      h3 About me
-      if(about.length != 0) 
-        - var con = about[0].content
-        button(class="btn btn-outline-danger mb-3" type="button" data-toggle="collapse" data-target="#about-field" aria-expanded="false" aria-controls="about-field" onclick="") Click to edit about-me
-      else
-        - var con = ""
-        button(class="btn btn-outline-primary mb-3" type="button" data-toggle="collapse" data-target="#about-field" aria-expanded="false" aria-controls="about-field") Click to add about-me
-      div(class="collapse pb-5" id="about-field")
-        form(class="was-validated" action="/sendAData" method="POST")
-          div(class="form-group")
-            label(for="validationTextarea2") Content
-            //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-            textarea(name="content" class="form-control" id="validationTextarea2" placeholder="Required about-me content textarea" required)=con
-            div(class="invalid-feedback") Please enter about me content in the textarea. 
-          if about.length != 0
-            button(type="submit" class="btn btn-outline-success") Change
-          else
-            button(type="submit" class="btn btn-outline-success") Add
 
-      h3 Project
-      button(class="btn btn-outline-primary mb-3" type="button" data-toggle="collapse" data-target="#project-field" aria-expanded="false" aria-controls="project-field") Click to add project
-      div(class="collapse" id="project-field")
-        form(class="was-validated" action="/sendPData" method="POST")
+      - var pname = project.name
+      h3=pname
+      div(class="" id="")
+        form(class="was-validated" action="/doneEditProject" method="POST")
           div(class="form-group")
             label(for="validationTextarea1") Project Name
             //- input(type="text" class="form-control text-wrap" style="height:5rem" id="projectTitle" placeholder="Enter your project name here" )
@@ -46,10 +28,8 @@ block layout-content
             //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
             textarea(name="pdetail" class="form-control " id="validationTextarea3" placeholder="Required project detail textarea" required maxlength="140")
             div(class="invalid-feedback") Please enter Project details in the textarea.
-          
-          button(class="btn btn-outline-info mb-3" type="button" data-toggle="collapse" data-target="#moreDetail" aria-expanded="false" aria-controls="moreDetail") Add more details
 
-          div(class="collapse" id="moreDetail")
+          div(class="" id="")
             div(class="form-group")
               label(for="validationTextarea4") Github Links
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
@@ -58,55 +38,22 @@ block layout-content
             div(class="form-group")
               label(for="validationTextarea4") Project Details
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-              textarea(name="pdetail" class="form-control is-valid" id="validationTextarea4" placeholder="project detail textarea" maxlength="140")
+              textarea(name="detail" class="form-control is-valid" id="validationTextarea4" placeholder="project detail textarea" maxlength="140")
               div(class="valid-feedback") (Optional)Please enter Project details in the textarea.
             div(class="form-group")
               label(for="validationTextarea5") Project Details
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-              textarea(name="pdetail" class="form-control is-valid" id="validationTextarea5" placeholder="project detail textarea" maxlength="140")
+              textarea(name="detail" class="form-control is-valid" id="validationTextarea5" placeholder="project detail textarea" maxlength="140")
               div(class="valid-feedback") (Optional)Please enter Project details in the textarea.
             div(class="form-group")
               label(for="validationTextarea6") Project Details
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-              textarea(name="pdetail" class="form-control is-invalid" id="validationTextarea6" placeholder="project detail textarea" maxlength="140")
+              textarea(name="detail" class="form-control is-invalid" id="validationTextarea6" placeholder="project detail textarea" maxlength="140")
               div(class="valid-feedback") (Optional)Please enter Project details in the textarea.
             div(class="form-group")
               label(for="validationTextarea7") Project Details
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-              textarea(name="pdetail" class="form-control is-valid" id="validationTextarea7" placeholder="project detail textarea" maxlength="140")
+              textarea(name="detail" class="form-control is-valid" id="validationTextarea7" placeholder="project detail textarea" maxlength="140")
               div(class="valid-feedback") (Optional)Please enter Project details in the textarea.
           br
-          button(type="submit" class="btn btn-outline-success") Add
-
-      
-
-
-
-    table(class="table mt-3")
-      thead(class="thead-light")
-        tr 
-          th About-me content
-          th 
-        tbody
-          each ab in about
-            td=ab.content
-            td
-              form(action="/deleteAbout" method="POST" class="d-inline")
-                button(class="btn btn-outline-danger btn-sm" name="id" value=about._id) Delete
-              
-
-    table(class="table mt-3")
-      thead(class="thead-light")
-        tr 
-          th Current Project
-          th Project Description
-          th 
-        tbody
-          each project in projects
-            td=project.name
-            td=project.desc
-            td
-              form(action="/deleteProject" method="POST" class="d-inline")
-                button(class="btn btn-outline-danger btn-sm" name="id" value=project._id) Delete
-              form(action="/editProject" method="POST" class="d-inline")
-                button(class="btn btn-outline-danger btn-sm" name="id" value=project._id) Edit
+          button(type="submit" class="btn btn-outline-secondary") Add
