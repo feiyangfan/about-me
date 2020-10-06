@@ -61,8 +61,20 @@ app.post("/deleteProject", async (req, res) => {
 app.post("/editProject", async (req, res) => {
   // await console.log(req.body);
   const project = await Project.findOne({ _id: req.body.id });
-  console.log(project);
   res.render("edit", { project: project });
+});
+
+app.post("/doneEditProject", async (req, res) => {
+  const project = await Project.updateOne(
+    { _id: req.body.id },
+    {
+      name: req.body.pname,
+      desc: req.body.pdesc,
+      details: req.body.pdetail,
+      githubLink: req.body.githubLink,
+    }
+  );
+  res.redirect("/");
 });
 
 app.post("");

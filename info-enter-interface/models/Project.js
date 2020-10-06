@@ -13,6 +13,9 @@ const ProjectSchema = new mongoose.Schema({
     type: Array,
     required: true,
   },
+  githubLink: {
+    type: String,
+  },
 });
 // ProjectSchema.index({ createdAt: 1 }, { expireAfterSeconds: 600 });
 

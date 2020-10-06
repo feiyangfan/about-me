@@ -10,23 +10,27 @@ block layout-content
     div(class='form-div')
 
       - var pname = project.name
-      h3=pname
+      - var pdesc = project.desc
+      - var pdetail1 = project.details[0]
+      - var id = project._id
+      - var display = "Currently editing project: " + project.name
+      h3=display
       div(class="" id="")
-        form(class="was-validated" action="/doneEditProject" method="POST")
+        form(class="was-validated" action="/doneEditProject" method="POST" new="11233")
           div(class="form-group")
             label(for="validationTextarea1") Project Name
             //- input(type="text" class="form-control text-wrap" style="height:5rem" id="projectTitle" placeholder="Enter your project name here" )
-            textarea(name="pname" class="form-control " id="validationTextarea1" placeholder="Required project name textarea" maxlength="50" required )
+            textarea(name="pname" class="form-control " id="validationTextarea1" placeholder="Required project name textarea" maxlength="50" required )=pname
             div(class="invalid-feedback") Please enter project name in the textarea. Max length: 50 characters
           div(class="form-group")
             label(for="validationTextarea2") Project Description
             //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-            textarea(name="pdesc" class="form-control " id="validationTextarea2" placeholder="Required project description textarea" maxlength="140" required)
+            textarea(name="pdesc" class="form-control " id="validationTextarea2" placeholder="Required project description textarea" maxlength="140" required)=pdesc
             div(class="invalid-feedback") Please enter Project description in the textarea. Max length: 140 characters
           div(class="form-group")
             label(for="validationTextarea3") Project Details
             //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-            textarea(name="pdetail" class="form-control " id="validationTextarea3" placeholder="Required project detail textarea" required maxlength="140")
+            textarea(name="pdetail" class="form-control " id="validationTextarea3" placeholder="Required project detail textarea" required maxlength="140")=pdetail1
             div(class="invalid-feedback") Please enter Project details in the textarea.
 
           div(class="" id="")
@@ -55,5 +59,7 @@ block layout-content
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
               textarea(name="detail" class="form-control is-valid" id="validationTextarea7" placeholder="project detail textarea" maxlength="140")
               div(class="valid-feedback") (Optional)Please enter Project details in the textarea.
+            div(class="form-group invisible")
+              textarea(name="id" class="form-control")=id
           br
-          button(type="submit" class="btn btn-outline-secondary") Add
+          button(type="submit" class="btn btn-outline-danger") Done Editing
