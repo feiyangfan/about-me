@@ -76,9 +76,15 @@ app.get("/interface", ensureAuth, async (req, res) => {
 
 app.post("/sendAData", async (req, res) => {
   // await console.log(req.body);
-  await About.create({
-    content: req.body.content,
-  });
+  const about = await About.find();
+  if (about.length) {
+    await About.updateMany({}, { content: req.body.content });
+  } else {
+    await About.create({
+      content: req.body.content,
+    });
+  }
+
   res.redirect("/interface");
 });
 
