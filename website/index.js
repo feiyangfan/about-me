@@ -21,6 +21,7 @@ mongoose.connect(`${process.env.MONGODB_URI}`, {
 
 app.get("/", async (req, res) => {
   const about = await About.find();
+  console.log(about);
   const projects = await Project.find();
   res.render("index", { about: about, projects: projects });
 });

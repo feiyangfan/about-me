@@ -30,8 +30,8 @@ block layout-content
     div(class="info-div container")
       h2(class="border-bottom pb-2 l-text") About me
       section(class="info container")
-        if (about.content)
-          p( class="text-dark")=about.content
+        if (about[0].content)
+          p( class="text-dark")=about[0].content
         else
           p( class="text-dark") There is no about me content, please use interface to add information
           
