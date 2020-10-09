@@ -16,6 +16,9 @@ const ProjectSchema = new mongoose.Schema({
   github: {
     type: String,
   },
+  website: {
+    type: String,
+  },
 });
 // ProjectSchema.index({ createdAt: 1 }, { expireAfterSeconds: 600 });
 

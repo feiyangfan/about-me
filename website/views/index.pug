@@ -43,9 +43,12 @@ block layout-content
             div(class="project-title d-flex align-items-center")
               h4
                 span(class="pr-4 m-text")=project.name
-              - console.log(project.github)
               if (project.github) 
-                a(class="text-muted ml-5" href=project.github) Github 
+                u
+                  a(class="text-primary ml-5" href=project.github) Github 
+              if (project.website) 
+                u
+                  a(class="text-primary ml-5" href=project.website) Website 
           div(class="container")
             p(class="pb-2")=project.desc
             ul(class="mt-n3")
