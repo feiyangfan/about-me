@@ -53,10 +53,15 @@ block layout-content
 
           div(class="collapse" id="moreDetail")
             div(class="form-group")
-              label(for="validationTextarea4") Github Links
+              label(for="validationTextarea4") Github Link
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
               input(name="github" class="form-control" type="url" id="validationTextarea4" placeholder="project detail textarea" )
               div(class="invalid-feedback") (Optional) Please enter Project Github link, begin with https://.
+            div(class="form-group")
+              label(for="validationTextarea4") Website Link
+              //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
+              input(name="website" class="form-control " type="url" id="validationTextarea4" placeholder="project detail textarea" maxlength="140")
+              div(class="invalid-feedback") (Optional) Please enter Project website link, begin with https://.
             div(class="form-group")
               label(for="validationTextarea4") Project Details
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
@@ -76,6 +81,11 @@ block layout-content
               label(for="validationTextarea7") Project Details
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
               textarea(name="pdetail" class="form-control" id="validationTextarea7" placeholder="project detail textarea")
+              div(class="valid-feedback") (Optional) Please enter Project details in the textarea.
+            div(class="form-group")
+              label(for="validationTextarea8") Project Details
+              //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
+              textarea(name="pdetail" class="form-control" id="validationTextarea8" placeholder="project detail textarea")
               div(class="valid-feedback") (Optional) Please enter Project details in the textarea.
           br
           button(type="submit" class="btn btn-outline-success") Add
