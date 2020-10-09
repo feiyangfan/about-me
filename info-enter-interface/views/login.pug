@@ -1,0 +1,14 @@
+extends layout
+
+block layout-content
+    div(class = "mt-5 pt-5 card mx-auto align-items-center"  style="width: 18rem; height: 22rem;")
+        div(class="card-body")
+            h5(class="card-title") Interface user login
+            p(class="card-text") Enter username and password below
+            p(class="text-danger")=error
+            form(class="was-validated" action="/login" method="POST")
+                div(class="form-group")
+                    //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
+                    input(type="text" name="username" class="form-control mb-1" id="validationTextarea1" placeholder="Username" required)
+                    input(type="password" name="password" class="form-control" id="validationTextarea2" placeholder="Password" required)
+                button(type="submit" class="btn btn-outline-success") Sign in
