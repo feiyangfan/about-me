@@ -13,7 +13,7 @@ const ProjectSchema = new mongoose.Schema({
     type: Array,
     required: true,
   },
-  githubLink: {
+  github: {
     type: String,
   },
 });

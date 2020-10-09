@@ -42,12 +42,12 @@ block layout-content
           div(class="form-group")
             label(for="validationTextarea2") Project Description
             //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-            textarea(name="pdesc" class="form-control " id="validationTextarea2" placeholder="Required project description textarea" maxlength="140" required)
+            textarea(name="pdesc" class="form-control " id="validationTextarea2" placeholder="Required project description textarea" required)
             div(class="invalid-feedback") Please enter Project description in the textarea. Max length: 140 characters
           div(class="form-group")
             label(for="validationTextarea3") Project Details
             //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-            textarea(name="pdetail" class="form-control " id="validationTextarea3" placeholder="Required project detail textarea" required maxlength="140")
+            textarea(name="pdetail" class="form-control " id="validationTextarea3" placeholder="Required project detail textarea" required )
             div(class="invalid-feedback") Please enter Project details in the textarea.
           button(class="btn btn-outline-info mb-3" type="button" data-toggle="collapse" data-target="#moreDetail" aria-expanded="false" aria-controls="moreDetail") Add more details
 
@@ -55,27 +55,27 @@ block layout-content
             div(class="form-group")
               label(for="validationTextarea4") Github Links
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-              textarea(name="githubLink" class="form-control" id="validationTextarea4" placeholder="project detail textarea" maxlength="140")
-              div(class="valid-feedback") (Optional) Please enter Project Github links in the textarea.
+              input(name="github" class="form-control" type="url" id="validationTextarea4" placeholder="project detail textarea" )
+              div(class="invalid-feedback") (Optional) Please enter Project Github link, begin with https://.
             div(class="form-group")
               label(for="validationTextarea4") Project Details
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-              textarea(name="pdetail" class="form-control " id="validationTextarea4" placeholder="project detail textarea" maxlength="140")
+              textarea(name="pdetail" class="form-control " id="validationTextarea4" placeholder="project detail textarea")
               div(class="valid-feedback") (Optional) Please enter Project details in the textarea.
             div(class="form-group")
               label(for="validationTextarea5") Project Details
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-              textarea(name="pdetail" class="form-control" id="validationTextarea5" placeholder="project detail textarea" maxlength="140")
+              textarea(name="pdetail" class="form-control" id="validationTextarea5" placeholder="project detail textarea" )
               div(class="valid-feedback") (Optional) Please enter Project details in the textarea.
             div(class="form-group")
               label(for="validationTextarea6") Project Details
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-              textarea(name="pdetail" class="form-control " id="validationTextarea6" placeholder="project detail textarea" maxlength="140")
+              textarea(name="pdetail" class="form-control " id="validationTextarea6" placeholder="project detail textarea" )
               div(class="valid-feedback") (Optional) Please enter Project details in the textarea.
             div(class="form-group")
               label(for="validationTextarea7") Project Details
               //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")
-              textarea(name="pdetail" class="form-control" id="validationTextarea7" placeholder="project detail textarea" maxlength="140")
+              textarea(name="pdetail" class="form-control" id="validationTextarea7" placeholder="project detail textarea")
               div(class="valid-feedback") (Optional) Please enter Project details in the textarea.
           br
           button(type="submit" class="btn btn-outline-success") Add

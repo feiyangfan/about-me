@@ -30,7 +30,7 @@ app.use(
     saveUninitialized: true,
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
     cookie: {
-      maxAge: 1000 * 60, // 60s
+      maxAge: 1000 * 600, // 600s
     },
   })
 );
@@ -48,7 +48,6 @@ app.use(passport.session());
 // Routes
 app.get("/", ensureGuest, (req, res) => {
   const message = req.flash("error");
-  console.log(req.flash("error"));
   res.render("login", { message: message });
 });
 
@@ -98,7 +97,7 @@ app.post("/sendPData", async (req, res) => {
     name: req.body.pname,
     desc: req.body.pdesc,
     details: req.body.pdetail,
-    githubLink: req.body.githubLink,
+    github: req.body.github,
   });
   res.redirect("/interface");
 });
