@@ -7,9 +7,7 @@ function validPassword(password, real) {
 module.exports = function (passport) {
   passport.use(
     new LocalStrategy(function (username, password, done) {
-      console.log(username, password);
       User.findOne({ username: username }, function (err, user) {
-        console.log(user);
         if (err) {
           return done(err);
         }
