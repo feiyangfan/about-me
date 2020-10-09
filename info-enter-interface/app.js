@@ -3,6 +3,11 @@ const path = require("path");
 const mongoose = require("mongoose");
 const Project = require("./models/Project");
 const About = require("./models/Aboutme");
+const passport = require("passport");
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+const connectDB = require("./config/db");
+const { ensureAuth, ensureGuest } = require("./middleware/auth");
 
 require("dotenv").config();
 
@@ -13,17 +18,45 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 app.use(express.urlencoded({ extended: false }));
 
-mongoose.connect(`${process.env.MONGODB_URI}`, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-});
+connectDB();
+
+// ==============SETUP SESSION================
+app.use(
+  session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: true,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  })
+);
+// ==============DONE================
+
+// ==============SETUP PASSPORT================
+
+require("./config/passport")(passport);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// ==============DONE================
 
 // Routes
 app.get("/", async (req, res) => {
+  res.render("login");
+});
+
+app.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/interface",
+    failureRedirect: "/",
+    failureFlash: true,
+  })
+);
+
+app.get("/interface", ensureAuth, async (req, res) => {
   const projects = await Project.find();
   const about = await About.find();
-  // console.log(projects);
   res.render("index", { projects: projects, about: about });
 });
 
@@ -36,13 +69,11 @@ app.post("/sendAData", async (req, res) => {
 });
 
 app.post("/deleteAbout", async (req, res) => {
-  // await console.log(req.body);
   await About.deleteMany({});
   res.redirect("/");
 });
 
 app.post("/sendPData", async (req, res) => {
-  // await console.log(req.body);
   await Project.create({
     name: req.body.pname,
     desc: req.body.pdesc,
@@ -53,7 +84,6 @@ app.post("/sendPData", async (req, res) => {
 });
 
 app.post("/deleteProject", async (req, res) => {
-  await console.log(req.body);
   await Project.deleteOne({ _id: req.body.id });
   res.redirect("/");
 });
