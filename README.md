@@ -18,3 +18,13 @@ My website is hosted on heroku, [Link](https://ffy-modular-personal-website.hero
 <img src="./readme-assets/login_demo.gif" alt="demo">
 
 **Add/Delete project Demo**
+<img src="./readme-assets/add_delete_project.gif" alt="demo">
+
+**Edit project Demo**
+<img src="./readme-assets/edit_project.gif" alt="demo">
+
+**Add/Delete about me Demo**
+<img src="./readme-assets/about_add_delete.gif" alt="demo">
+
+**Edit about Demo**
+<img src="./readme-assets/edit_about.gif" alt="demo">
