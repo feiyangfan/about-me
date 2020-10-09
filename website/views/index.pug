@@ -30,15 +30,11 @@ block layout-content
     div(class="info-div container")
       h2(class="border-bottom pb-2 l-text") About me
       section(class="info container")
-        p( class="text-dark") 
-          | My name is Feiyang Fan. I am an third-year computer science specialist studying at 
-          u
-            a(href="https://www.utoronto.ca/") University of Toronto.
-          |  I am interested in web development, desktop development, mobile development, data processing, and machine learning. This is a small website I made about me. Currently, I am working on a 
-          u
-            a(href="https://github.com/feiyangfan/my-daily-planner"
-              ) web daily planner app
-          |  that have many simple but useful features! Anyways, have a nice day!
+        if (about.content)
+          p( class="text-dark")=about.content
+        else
+          p( class="text-dark") There is no about me content, please use interface to add information
+          
     div(class="projects-sec container")
       h2(class="border-bottom pb-2 l-text") Projects
       div(class="container")
