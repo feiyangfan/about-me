@@ -8,6 +8,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const connectDB = require("./config/db");
 const { ensureAuth, ensureGuest } = require("./middleware/auth");
+const flash = require("connect-flash");
 
 require("dotenv").config();
 
@@ -17,6 +18,7 @@ const port = process.env.PORT || "8000";
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 app.use(express.urlencoded({ extended: false }));
+app.use(flash());
 
 connectDB();
 
@@ -27,6 +29,9 @@ app.use(
     resave: false,
     saveUninitialized: true,
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    cookie: {
+      maxAge: 1000 * 60,
+    },
   })
 );
 // ==============DONE================
@@ -41,8 +46,10 @@ app.use(passport.session());
 // ==============DONE================
 
 // Routes
-app.get("/", async (req, res) => {
-  res.render("login");
+app.get("/", ensureGuest, (req, res) => {
+  const message = req.flash("error");
+  console.log(req.flash("error"));
+  res.render("login", { message: message });
 });
 
 app.post(
@@ -53,6 +60,13 @@ app.post(
     failureFlash: true,
   })
 );
+
+app.get("/logout", (req, res) => {
+  req.logout();
+  req.session.destroy(function (err) {
+    res.redirect("/"); //Inside a callback… bulletproof!
+  });
+});
 
 app.get("/interface", ensureAuth, async (req, res) => {
   const projects = await Project.find();
@@ -65,12 +79,12 @@ app.post("/sendAData", async (req, res) => {
   await About.create({
     content: req.body.content,
   });
-  res.redirect("/");
+  res.redirect("/interface");
 });
 
 app.post("/deleteAbout", async (req, res) => {
   await About.deleteMany({});
-  res.redirect("/");
+  res.redirect("/interface");
 });
 
 app.post("/sendPData", async (req, res) => {
@@ -80,12 +94,12 @@ app.post("/sendPData", async (req, res) => {
     details: req.body.pdetail,
     githubLink: req.body.githubLink,
   });
-  res.redirect("/");
+  res.redirect("/interface");
 });
 
 app.post("/deleteProject", async (req, res) => {
   await Project.deleteOne({ _id: req.body.id });
-  res.redirect("/");
+  res.redirect("/interface");
 });
 
 app.post("/editProject", async (req, res) => {
@@ -104,10 +118,8 @@ app.post("/doneEditProject", async (req, res) => {
       githubLink: req.body.githubLink,
     }
   );
-  res.redirect("/");
+  res.redirect("/interface");
 });
-
-app.post("");
 
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
