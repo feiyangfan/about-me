@@ -43,8 +43,11 @@ block layout-content
             div(class="project-title d-flex align-items-center")
               h4
                 span(class="pr-4 m-text")=project.name
+              - console.log(project.github)
+              if (project.github) 
+                a(class="text-muted ml-5" href=project.github) Github 
           div(class="container")
-            p=project.desc
+            p(class="pb-2")=project.desc
             ul(class="mt-n3")
               each detail in project.details
                 if detail
