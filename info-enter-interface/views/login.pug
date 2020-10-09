@@ -5,7 +5,7 @@ block layout-content
         div(class="card-body")
             h5(class="card-title") Interface user login
             p(class="card-text") Enter username and password below
-            p(class="text-danger")=error
+            p(class="text-danger")=message
             form(class="was-validated" action="/login" method="POST")
                 div(class="form-group")
                     //- input(type="text" class="form-control text-wrap" id="projectContent" placeholder="Enter your project content here")

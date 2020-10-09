@@ -2,9 +2,12 @@ extends layout
 
 block layout-content
   div(class='main-display h-100 container p-4')
-    h2(class='pb-2 pt-2')
-      | Interface for 
-      a(href="https://ffy-modular-personal-website.herokuapp.com/") my modular personal website
+    div(class="d-flex align-items-center justify-content-between")
+      h2(class='pb-2 pt-2')
+        | Interface for 
+        a(href="https://ffy-modular-personal-website.herokuapp.com/") my modular personal website
+      form(class="" action="/logout" method="GET")
+        button(class="btn btn-outline-danger" type="submit") Logout
 
 
     div(class='form-div')
