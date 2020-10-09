@@ -12,14 +12,15 @@ module.exports = function (passport) {
           return done(err);
         }
         if (!user) {
-          return done(null, false);
+          console.log("user not exists");
+          return done(null, false, { message: "Username does not exist!" });
         }
         const isValid = validPassword(password, user.password);
         if (isValid) {
           console.log("Signed in");
           return done(null, user);
         } else {
-          return done(null, false);
+          return done(null, false, { message: "Wrong password!" });
         }
       });
     })
