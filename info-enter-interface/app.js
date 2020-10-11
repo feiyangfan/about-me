@@ -98,6 +98,7 @@ app.post("/sendPData", async (req, res) => {
     desc: req.body.pdesc,
     details: req.body.pdetail,
     github: req.body.github,
+    website: req.body.website,
   });
   res.redirect("/interface");
 });
