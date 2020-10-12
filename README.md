@@ -10,13 +10,13 @@ add/delete/edit information in a modular way. Details see below.
 * [How to use](#how-to-use)
 * [Dependency/library List](#dependencylibrary-list)
 * [Development Logs](#development-logs)
-    * [Sept 20:](#sept-20)
-    * [Sept 21-22:](#sept-21-22)
-    * [Sept 23-29:](#sept-23-29)
-    * [Sept 30:](#sept-30)
-    * [Oct 1-2:](#oct-1-2)
-    * [Oct 3-5:](#oct-3-5)
-    * [Oct 8-9 (Finished):](#oct-8-9-finished)
+    * [Sept 20](#sept-20)
+    * [Sept 21-22](#sept-21-22)
+    * [Sept 23-29](#sept-23-29)
+    * [Sept 30](#sept-30)
+    * [Oct 1-2](#oct-1-2)
+    * [Oct 3-5](#oct-3-5)
+    * [Oct 8-9 (Finished)](#oct-8-9-finished)
 
 ## Inspiration
 I was inspired to build this app when I was building my personal website. I feel like it is not efficient to directly modify the website's codes every time I need to change something. Therefore, I built this app that has an interface thats allow me to change information, and automatically translate the information changed into a modern and responsive personal website.
@@ -59,7 +59,7 @@ Website built with this tool is hosted on heroku, [Link](https://ffy-modular-per
 <img src="./readme-assets/done.gif" alt="demo">
 
 ## Dependency/library List
-
+Dependencies:
 * Express
 * Pug
 * mongoose
